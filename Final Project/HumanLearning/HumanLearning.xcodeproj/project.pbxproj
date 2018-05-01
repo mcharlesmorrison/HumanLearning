@@ -13,7 +13,8 @@
 		2D2247FE208ED043007BB569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D2247FD208ED043007BB569 /* GoogleService-Info.plist */; };
 		2D5A527120967F0B002C199B /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A527020967F0B002C199B /* ArticleManager.swift */; };
 		2D5A52732096A3B5002C199B /* SavedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A52722096A3B5002C199B /* SavedPageViewController.swift */; };
-		2D5A527520977927002C199B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A527420977927002C199B /* DataController.swift */; };
+		2D8DB18020983C06009803B2 /* userArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DB17F20983C06009803B2 /* userArticles.swift */; };
+		2D8DB182209840D7009803B2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DB181209840D7009803B2 /* Lato-Light.ttf */; };
 		2DCE73C32087E8A100B986E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE73C22087E8A100B986E4 /* AppDelegate.swift */; };
 		2DCE73C52087E8A100B986E4 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE73C42087E8A100B986E4 /* LandingPageViewController.swift */; };
 		2DCE73C82087E8A100B986E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCE73C62087E8A100B986E4 /* Main.storyboard */; };
@@ -63,7 +64,8 @@
 		2D2247FD208ED043007BB569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D5A527020967F0B002C199B /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		2D5A52722096A3B5002C199B /* SavedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPageViewController.swift; sourceTree = "<group>"; };
-		2D5A527420977927002C199B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		2D8DB17F20983C06009803B2 /* userArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userArticles.swift; sourceTree = "<group>"; };
+		2D8DB181209840D7009803B2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DCE73BF2087E8A100B986E4 /* HumanLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCE73C22087E8A100B986E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DCE73C42087E8A100B986E4 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		2DCE73FB2087EF9F00B986E4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2D8DB181209840D7009803B2 /* Lato-Light.ttf */,
 				2D2247F620886AFC007BB569 /* Lato-BoldItalic.ttf */,
 				2DCE7411208827AB00B986E4 /* Lato-Bold.ttf */,
 				2DCE7412208827AB00B986E4 /* Lato-Italic.ttf */,
@@ -206,7 +209,7 @@
 			children = (
 				2DCE740A20881FAF00B986E4 /* Article.swift */,
 				2D5A527020967F0B002C199B /* ArticleManager.swift */,
-				2D5A527420977927002C199B /* DataController.swift */,
+				2D8DB17F20983C06009803B2 /* userArticles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				2DCE73D02087E8A200B986E4 /* LaunchScreen.storyboard in Resources */,
 				2D2247FE208ED043007BB569 /* GoogleService-Info.plist in Resources */,
 				2DCE7414208827AC00B986E4 /* Lato-Bold.ttf in Resources */,
+				2D8DB182209840D7009803B2 /* Lato-Light.ttf in Resources */,
 				2D2247F720886AFC007BB569 /* Lato-BoldItalic.ttf in Resources */,
 				2DCE73CD2087E8A200B986E4 /* Assets.xcassets in Resources */,
 				2DCE7416208827AC00B986E4 /* Lato-Regular.ttf in Resources */,
@@ -531,31 +535,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HumanLearning/Pods-HumanLearning-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FileSystem/FileSystem.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileSystem.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -574,9 +568,9 @@
 				2DCE73C52087E8A100B986E4 /* LandingPageViewController.swift in Sources */,
 				2DCE73CB2087E8A100B986E4 /* HumanLearning.xcdatamodeld in Sources */,
 				2DCE74092088017600B986E4 /* ArticlePageViewController.swift in Sources */,
+				2D8DB18020983C06009803B2 /* userArticles.swift in Sources */,
 				2DCE73C32087E8A100B986E4 /* AppDelegate.swift in Sources */,
 				2D5A527120967F0B002C199B /* ArticleManager.swift in Sources */,
-				2D5A527520977927002C199B /* DataController.swift in Sources */,
 				2D5A52732096A3B5002C199B /* SavedPageViewController.swift in Sources */,
 				2DCE740B20881FAF00B986E4 /* Article.swift in Sources */,
 			);

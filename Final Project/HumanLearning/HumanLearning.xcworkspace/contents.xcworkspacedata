@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HumanLearning/User+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:HumanLearning/User+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:HumanLearning.xcodeproj">
    </FileRef>
    <FileRef
