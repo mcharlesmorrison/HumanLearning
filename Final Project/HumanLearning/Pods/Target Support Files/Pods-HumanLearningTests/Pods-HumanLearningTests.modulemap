@@ -1,0 +1,6 @@
+framework module Pods_HumanLearningTests {
+  umbrella header "Pods-HumanLearningTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
