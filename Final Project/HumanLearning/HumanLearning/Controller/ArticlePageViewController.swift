@@ -51,7 +51,7 @@ class ArticlePageViewController: UIViewController {
                             let image = UIImage(data: imageData)
                             
                             //displaying the image
-                            DispatchQueue.global().async {
+                            DispatchQueue.main.async {
                             self.articlePhoto.image = image
                             print("photo access complete for real")
                             }
