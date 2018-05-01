@@ -1,6 +1,0 @@
-framework module FileSystem {
-  umbrella header "FileSystem-umbrella.h"
-
-  export *
-  module * { export * }
-}
