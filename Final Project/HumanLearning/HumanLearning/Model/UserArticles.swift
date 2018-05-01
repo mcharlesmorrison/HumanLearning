@@ -19,7 +19,7 @@ class UserArticles {
     static let savedURL = MainDirectory.appendingPathComponent("saved")
     static let readURL = MainDirectory.appendingPathComponent("read")
     
-    static func persist(articles: [Article], option: UserArticles.Option) {
+    static func persist(articles: [Article], _ option: UserArticles.Option) {
         var url: URL
         switch option {
         case .read:
@@ -36,7 +36,7 @@ class UserArticles {
         }
     }
     
-    static func get(option: UserArticles.Option) -> [Article]? {
+    static func get(_ option: UserArticles.Option) -> [Article]? {
         var url: URL
         switch option {
         case .read:
