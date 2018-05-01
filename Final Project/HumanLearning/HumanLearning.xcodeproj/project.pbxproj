@@ -34,6 +34,8 @@
 		2DCE741B2088678100B986E4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DCE7413208827AC00B986E4 /* Lato-Regular.ttf */; };
 		2DCE741C2088678100B986E4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DCE7413208827AC00B986E4 /* Lato-Regular.ttf */; };
 		6D2BADFF6CA4C894BCA02E1F /* Pods_HumanLearningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6E8B4B134F55377FF510ED /* Pods_HumanLearningUITests.framework */; };
+		992050E820982F960044C6B8 /* OptionsMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992050E720982F960044C6B8 /* OptionsMenuPresentationController.swift */; };
+		992050E920982F960044C6B8 /* OptionsMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992050E720982F960044C6B8 /* OptionsMenuPresentationController.swift */; };
 		9F85ADF1C96383C6254D4AEE /* Pods_HumanLearningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B2E30FFD543F029C79A152 /* Pods_HumanLearningTests.framework */; };
 		C8F61A3CECCF835E9281CA9F /* Pods_HumanLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EF84DD971CF252F22A2707 /* Pods_HumanLearning.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,7 @@
 		2DCE7412208827AB00B986E4 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "Lato/Lato-Italic.ttf"; sourceTree = SOURCE_ROOT; };
 		2DCE7413208827AC00B986E4 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Lato/Lato-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		59D49BE22D59206F03960B1E /* Pods-HumanLearningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HumanLearningUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HumanLearningUITests/Pods-HumanLearningUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		992050E720982F960044C6B8 /* OptionsMenuPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenuPresentationController.swift; sourceTree = "<group>"; };
 		A7B2E30FFD543F029C79A152 /* Pods_HumanLearningTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HumanLearningTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF76881B17AFDB99ED4791B /* Pods-HumanLearningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HumanLearningUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HumanLearningUITests/Pods-HumanLearningUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B2FAFF48B00C4080DC8D7E75 /* Pods-HumanLearningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HumanLearningTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HumanLearningTests/Pods-HumanLearningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				2DCE73C42087E8A100B986E4 /* LandingPageViewController.swift */,
+				992050E720982F960044C6B8 /* OptionsMenuPresentationController.swift */,
 				2DCE74082088017600B986E4 /* ArticlePageViewController.swift */,
 				2D5A52722096A3B5002C199B /* SavedPageViewController.swift */,
 			);
@@ -579,6 +583,7 @@
 				2D5A527520977927002C199B /* DataController.swift in Sources */,
 				2D5A52732096A3B5002C199B /* SavedPageViewController.swift in Sources */,
 				2DCE740B20881FAF00B986E4 /* Article.swift in Sources */,
+				992050E820982F960044C6B8 /* OptionsMenuPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992050E920982F960044C6B8 /* OptionsMenuPresentationController.swift in Sources */,
 				2DCE73DB2087E8A200B986E4 /* HumanLearningTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,13 +8,17 @@
 
 import UIKit
 
-class LandingPageViewController: UIViewController {
+class LandingPageViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
+    // MARK: IB Outlets
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var articlesSavedLabel: UILabel!
-    
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var seeSavedButton: UIButton!
+    
+    // MARK: Properties
+    var blurEffectView: UIVisualEffectView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +38,9 @@ class LandingPageViewController: UIViewController {
         // Make button rounded
         seeSavedButton.layer.cornerRadius = 24
         seeSavedButton.clipsToBounds = true
-        
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func savedArticlesButtonPressed(_ sender: Any) {
     }
@@ -49,6 +49,46 @@ class LandingPageViewController: UIViewController {
         performSegue(withIdentifier: "learnButtonSegue",
                      sender: nil)
     }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        /**
+         * [src] https://stackoverflow.com/questions/29219688/present-modal-view-controller-in-half-size-parent-controller/45525284
+         * Instructions for understanding partially presented view controller, using a presentation controller
+         */
+        let menuController = storyboard!.instantiateViewController(withIdentifier: "optionsMenuViewController")
+            as! OptionsMenuViewController
+        menuController.modalPresentationStyle = .custom
+        menuController.transitioningDelegate = self
+        menuController.view.backgroundColor = .black
+        self.addBlurEffect()
+        menuController.onToggledMenuButtonDidTouch = {
+            self.removeBlurEffect()
+            menuController.dismiss(animated: true, completion: nil)
+        }
+        
+        present(menuController, animated: true, completion: nil)
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return OptionsMenuPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+    
+    // MARK: Helpers
+    func addBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .regular)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView!.frame = self.view.bounds
+        blurEffectView!.alpha = 0.95
+        
+        view.addSubview(blurEffectView!)
+    }
+    
+    func removeBlurEffect() {
+        if let blurEffectView = blurEffectView {
+            blurEffectView.removeFromSuperview()
+        }
+    }
+    
     
 }
 

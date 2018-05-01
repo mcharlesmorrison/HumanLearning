@@ -51,8 +51,9 @@ class ArticlePageViewController: UIViewController {
                             let image = UIImage(data: imageData)
                             
                             //displaying the image
-                            DispatchQueue.global().async {
+                            DispatchQueue.main.async {
                             self.articlePhoto.image = image
+                            self.articlePhoto.reloadInputViews()
                             print("photo access complete for real")
                             }
                         } else {
@@ -90,8 +91,7 @@ class ArticlePageViewController: UIViewController {
     
     // Takes user to next article
     @IBAction func nextButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "nextButtonSegue",
-                     sender: nil)
+        performSegue(withIdentifier: "nextButtonSegue", sender: nil)
     }
     
     /*
