@@ -14,25 +14,22 @@ import FirebaseStorage
 
 class ArticleManager {
 
-    init() {
-        
-    }
+    init() {}
     
     func fetch(handle: @escaping (Article) -> Void) {
-        let myArticle = Article()
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        ref.child("articles").observeSingleEvent(of: .value, with: { snapshot -> Void in
+        ref.child("articles").observeSingleEvent(of: .value, with: {
+            snapshot -> Void in
             if snapshot.exists() {
-//                print("snapshot does exist")
-                let articleKey = myArticle.randomNum(numRange: Int(snapshot.childrenCount))
+                let articleKey = Article.randomNum(numRange: Int(snapshot.childrenCount))
                 let articleData = snapshot.childSnapshot(forPath: articleKey)
                 print(articleData.childSnapshot(forPath: "title").value!)
-                myArticle.title = articleData.childSnapshot(forPath: "title").value! as! String
-                myArticle.text = articleData.childSnapshot(forPath: "text").value! as! String
-                myArticle.link = articleData.childSnapshot(forPath: "link").value! as! String
-                myArticle.imagePath = articleData.childSnapshot(forPath: "imagePath").value! as! String
-
+                let title = articleData.childSnapshot(forPath: "title").value! as! String
+                let text = articleData.childSnapshot(forPath: "text").value! as! String
+                let link = articleData.childSnapshot(forPath: "link").value! as! String
+                let imagePath = articleData.childSnapshot(forPath: "imagePath").value! as! String
+                let myArticle = Article(title: title, text: text, imagePath: imagePath, link: link)
                 handle(myArticle)
             }
             else {

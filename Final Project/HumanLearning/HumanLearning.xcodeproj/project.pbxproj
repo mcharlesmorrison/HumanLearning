@@ -13,7 +13,7 @@
 		2D2247FE208ED043007BB569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D2247FD208ED043007BB569 /* GoogleService-Info.plist */; };
 		2D5A527120967F0B002C199B /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A527020967F0B002C199B /* ArticleManager.swift */; };
 		2D5A52732096A3B5002C199B /* SavedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A52722096A3B5002C199B /* SavedPageViewController.swift */; };
-		2D8DB18020983C06009803B2 /* userArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DB17F20983C06009803B2 /* userArticles.swift */; };
+		2D8DB18020983C06009803B2 /* UserArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DB17F20983C06009803B2 /* UserArticles.swift */; };
 		2D8DB182209840D7009803B2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DB181209840D7009803B2 /* Lato-Light.ttf */; };
 		2DCE73C32087E8A100B986E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE73C22087E8A100B986E4 /* AppDelegate.swift */; };
 		2DCE73C52087E8A100B986E4 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE73C42087E8A100B986E4 /* LandingPageViewController.swift */; };
@@ -66,7 +66,7 @@
 		2D2247FD208ED043007BB569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D5A527020967F0B002C199B /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		2D5A52722096A3B5002C199B /* SavedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPageViewController.swift; sourceTree = "<group>"; };
-		2D8DB17F20983C06009803B2 /* userArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userArticles.swift; sourceTree = "<group>"; };
+		2D8DB17F20983C06009803B2 /* UserArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticles.swift; sourceTree = "<group>"; };
 		2D8DB181209840D7009803B2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DCE73BF2087E8A100B986E4 /* HumanLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCE73C22087E8A100B986E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			children = (
 				2DCE740A20881FAF00B986E4 /* Article.swift */,
 				2D5A527020967F0B002C199B /* ArticleManager.swift */,
-				2D8DB17F20983C06009803B2 /* userArticles.swift */,
+				2D8DB17F20983C06009803B2 /* UserArticles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 				2DCE73C52087E8A100B986E4 /* LandingPageViewController.swift in Sources */,
 				2DCE73CB2087E8A100B986E4 /* HumanLearning.xcdatamodeld in Sources */,
 				2DCE74092088017600B986E4 /* ArticlePageViewController.swift in Sources */,
-				2D8DB18020983C06009803B2 /* userArticles.swift in Sources */,
+				2D8DB18020983C06009803B2 /* UserArticles.swift in Sources */,
 				2DCE73C32087E8A100B986E4 /* AppDelegate.swift in Sources */,
 				2D5A527120967F0B002C199B /* ArticleManager.swift in Sources */,
 				2D5A52732096A3B5002C199B /* SavedPageViewController.swift in Sources */,
@@ -673,7 +673,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K5FFYBYC49;
 				INFOPLIST_FILE = "$(SRCROOT)/HumanLearning/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -689,7 +692,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K5FFYBYC49;
 				INFOPLIST_FILE = "$(SRCROOT)/HumanLearning/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -705,7 +711,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HumanLearningTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -722,7 +732,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HumanLearningTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -738,7 +752,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HumanLearningUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearningUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -754,7 +772,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HumanLearningUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattymorrison.HumanLearningUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
