@@ -23,13 +23,15 @@ class ArticlePageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let manager = ArticleManager()
         manager.fetch(handle: {
             fetchedArticle -> Void in
             self.article = fetchedArticle
-            
+            // Persisting read article
+            UserArticles.persist(articles: [self.article], option: .read)
             self.articleText.text = fetchedArticle.text
             self.articleTitle.text = fetchedArticle.title
             
@@ -95,8 +97,11 @@ class ArticlePageViewController: UIViewController {
         performSegue(withIdentifier: "nextButtonSegue", sender: nil)
     }
     
-    func saveButtonPressed(_ sender: Any) {
+    @IBAction func saveButtonPressed(_ sender: Any) {
         UserArticles.persist(articles: [article], option: .saved)
+        
+        let savedArticles = UserArticles.get(.saved)!
+        debugPrint(savedArticles)
     }
 
 }

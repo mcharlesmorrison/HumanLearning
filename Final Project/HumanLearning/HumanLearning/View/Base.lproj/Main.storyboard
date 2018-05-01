@@ -143,7 +143,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="articles saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PZ-ly-aTJ">
-                                <rect key="frame" x="69.5" y="459" width="237" height="51"/>
+                                <rect key="frame" x="69" y="459" width="237" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6PZ-ly-aTJ" secondAttribute="height" multiplier="79:17" id="ff0-Qu-4Dr"/>
                                 </constraints>
@@ -263,9 +263,18 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="ZLm-rf-2Y2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QT7-TW-tr9">
+                                <rect key="frame" x="24" y="586" width="43" height="38"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="RsY-xf-EYZ" eventType="touchUpInside" id="vsM-iU-mZO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QT7-TW-tr9" firstAttribute="leading" secondItem="WNg-7f-eyo" secondAttribute="leading" constant="24" id="4o5-h8-k1b"/>
                             <constraint firstItem="8Iv-DS-8kx" firstAttribute="top" secondItem="WNg-7f-eyo" secondAttribute="top" constant="166" id="8BL-16-ZWr"/>
                             <constraint firstItem="kD2-ei-WAJ" firstAttribute="leading" secondItem="I9i-qk-y2g" secondAttribute="leading" constant="-5" id="CH9-UP-7my"/>
                             <constraint firstItem="WNg-7f-eyo" firstAttribute="bottom" secondItem="iX2-ZF-ugA" secondAttribute="bottom" constant="118" id="WKv-XD-hOS"/>
@@ -273,6 +282,7 @@
                             <constraint firstItem="Kwj-KC-Jwl" firstAttribute="centerX" secondItem="WNg-7f-eyo" secondAttribute="centerX" id="Y8W-mc-S3h"/>
                             <constraint firstItem="WNg-7f-eyo" firstAttribute="trailing" secondItem="GHj-Ht-DJK" secondAttribute="trailing" constant="40" id="aNb-y0-tyx"/>
                             <constraint firstItem="WNg-7f-eyo" firstAttribute="trailing" secondItem="iX2-ZF-ugA" secondAttribute="trailing" constant="16" id="diA-Dd-atu"/>
+                            <constraint firstItem="WNg-7f-eyo" firstAttribute="bottom" secondItem="QT7-TW-tr9" secondAttribute="bottom" constant="43" id="gg2-B1-1NI"/>
                             <constraint firstItem="iX2-ZF-ugA" firstAttribute="top" secondItem="8Iv-DS-8kx" secondAttribute="bottom" id="hsQ-6N-B22"/>
                             <constraint firstItem="iX2-ZF-ugA" firstAttribute="leading" secondItem="WNg-7f-eyo" secondAttribute="leading" constant="24" id="lJd-zh-8PE"/>
                             <constraint firstItem="8Iv-DS-8kx" firstAttribute="leading" secondItem="WNg-7f-eyo" secondAttribute="leading" constant="24" id="lzW-Ha-tLI"/>
@@ -291,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzY-MM-r88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="91"/>
+            <point key="canvasLocation" x="1008.8" y="90.404797601199405"/>
         </scene>
         <!--Saved Page View Controller-->
         <scene sceneID="UBU-fS-0uk">

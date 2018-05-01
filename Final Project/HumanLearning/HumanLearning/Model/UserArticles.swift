@@ -29,6 +29,7 @@ class UserArticles {
         }
         
         let isSuccessful = NSKeyedArchiver.archiveRootObject(articles, toFile: url.path)
+        
         guard isSuccessful else {
             debugPrint("Failed to save articles.")
             return
