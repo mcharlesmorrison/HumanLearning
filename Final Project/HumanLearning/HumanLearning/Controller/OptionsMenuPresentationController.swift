@@ -9,6 +9,8 @@
 import UIKit
 
 class OptionsMenuViewController: UIViewController {
+    
+    
     @IBOutlet weak var toggledMenuButton: UIButton!
     var onToggledMenuButtonDidTouch: (() -> Swift.Void)?
     

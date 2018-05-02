@@ -24,12 +24,13 @@ class ArticleManager {
             if snapshot.exists() {
                 let articleKey = Article.randomNum(numRange: Int(snapshot.childrenCount))
                 let articleData = snapshot.childSnapshot(forPath: articleKey)
-                print(articleData.childSnapshot(forPath: "title").value!)
                 let title = articleData.childSnapshot(forPath: "title").value! as! String
                 let text = articleData.childSnapshot(forPath: "text").value! as! String
                 let link = articleData.childSnapshot(forPath: "link").value! as! String
                 let imagePath = articleData.childSnapshot(forPath: "imagePath").value! as! String
-                let myArticle = Article(title: title, text: text, imagePath: imagePath, link: link)
+                // Getting String "one" or "two" or "seventeen" to check whether article has been read
+                let dbKey =  articleData.key
+                let myArticle = Article(title: title, text: text, imagePath: imagePath, link: link, dbKey: dbKey)
                 handle(myArticle)
             }
             else {

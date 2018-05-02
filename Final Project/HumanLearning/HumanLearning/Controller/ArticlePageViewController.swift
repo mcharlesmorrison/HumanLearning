@@ -16,6 +16,7 @@ class ArticlePageViewController: UIViewController {
     @IBOutlet weak var articleText: UITextView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    private var gradient: CAGradientLayer!
     
     var article: Article!
     
@@ -30,13 +31,14 @@ class ArticlePageViewController: UIViewController {
         manager.fetch(handle: {
             fetchedArticle -> Void in
             self.article = fetchedArticle
-            // Persisting read article
-            UserArticles.persist(articles: [self.article], option: .read)
+           
+            // Adding article to File System
+            UserArticles.persist(articles: [self.article], .read)
+            
             self.articleText.text = fetchedArticle.text
             self.articleTitle.text = fetchedArticle.title
             
             // Need to acces the image from URL
-            print("beginning of photo access")
             let session = URLSession(configuration: .default)
             //creating a dataTask
             let listUrlString = fetchedArticle.imagePath
@@ -59,10 +61,9 @@ class ArticlePageViewController: UIViewController {
                             DispatchQueue.main.async {
                             self.articlePhoto.image = image
                             self.articlePhoto.reloadInputViews()
-                            print("photo access complete for real")
                             }
                         } else {
-                            print("Image file is currupted")
+                            print("Image file is corrupted")
                         }
                     } else {
                         print("No response from server")
@@ -71,7 +72,6 @@ class ArticlePageViewController: UIViewController {
             }
             //starting the download task
             getImageFromUrl.resume()
-            print("photo access complete")
         })
         
         // Make next button rounded
@@ -81,7 +81,16 @@ class ArticlePageViewController: UIViewController {
         // Make back button rounded
         backButton.layer.cornerRadius = 6
         backButton.clipsToBounds = true
+        
+//        //Fading out text with gradient
+//        gradient = CAGradientLayer()
+//        gradient.frame = articleText.bounds
+//        gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
+//        gradient.locations = [0, 0.1, 0.9, 1]
+//        articleText.layer.mask = gradient
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -98,10 +107,31 @@ class ArticlePageViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        UserArticles.persist(articles: [article], option: .saved)
+        UserArticles.persist(articles: [article], .saved)
         
         let savedArticles = UserArticles.get(.saved)!
-        debugPrint(savedArticles)
     }
+    
+    
+    
+    // Messing around with gradients
+    //    override func viewDidLayoutSubviews() {
+    //        super.viewDidLayoutSubviews()
+    //
+    //        gradient.frame = articleText.bounds
+    //    }
+    //
+    //    func textViewDidScroll(_ textView: UITextView) {
+    //        updateGradientFrame()
+    //    }
+    //
+    //    private func updateGradientFrame() {
+    //        gradient.frame = CGRect(
+    //            x: 0,
+    //            y: articleText.contentOffset.y,
+    //            width: articleText.bounds.width,
+    //            height: articleText.bounds.height
+    //        )
+    //    }
 
 }

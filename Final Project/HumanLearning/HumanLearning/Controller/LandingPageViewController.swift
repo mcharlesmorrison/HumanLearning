@@ -33,12 +33,24 @@ class LandingPageViewController: UIViewController, UIViewControllerTransitioning
         
         // Setting articles read this week label text
         // NEED TO MAKE IT ARTICLE FOR 1 ARTICLE
-        articlesSavedLabel.text = "articles read"
+        articlesSavedLabel.text = "articles saved"
         
         // Make button rounded
         seeSavedButton.layer.cornerRadius = 24
         seeSavedButton.clipsToBounds = true
-
+        
+        let savedArticles = UserArticles.get(.saved)
+        let numSaved: Int
+        if savedArticles == nil {
+            numSaved = 0
+        }
+        else {
+            numSaved = savedArticles!.count
+        }
+        if numSaved == 1 {
+            articlesSavedLabel.text = "article saved"
+        }
+        numberLabel.text = String(numSaved)
     }
 
     
